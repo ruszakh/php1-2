@@ -1,45 +1,22 @@
 <?php
 
-function name($n) {
-    switch ($n) {
-        case 'Александр':
-            echo 'Мужской';
-            break;
-        case 'Дмитрий':
-            echo 'Мужской';
-            break;
-        case 'Сергей':
-            echo 'Мужской';
-            break;
-        case 'Максим':
-            echo 'Мужской';
-            break;
-        case 'Олег':
-            echo 'Мужской';
-            break;
-        case 'Ольга':
-            echo 'Женский';
-            break;
-        case 'Татьяна':
-            echo 'Женский';
-            break;
-        case 'Елена':
-            echo 'Женский';
-            break;
-        case 'Светлана':
-            echo 'Женский';
-            break;
-        case 'Ирина':
-            echo 'Женский';
-            break;
-        default:
-            echo 'null';
+function name($name) {
+    $n = mb_substr($name, -1);
+    if ('р' == $n) {
+        echo 'Пол - мужской';
+    } elseif ('а' == $n ) {
+        echo 'Пол - женский';
+    } else {
+        echo null;
     }
 }
 
 assert('Александр' === 'Мужской');
+assert('Пётр' === 'Мужской');
+assert('Егор' === 'Мужской');
 assert('Ирина' === 'Женский');
-assert('Лариса' === 'null');
+assert('Ольга' === 'Женский');
+assert('Лариса' === 'Женский');
+assert('Картофель' === null);
 
- name('Олег');
-
+ name('Артур');
