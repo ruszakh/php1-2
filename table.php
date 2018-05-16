@@ -13,6 +13,7 @@
     <a href="/table.php">Таблица истинности</a> |
     <a href="/equation.php">Решение уравнений</a> |
     <a href="/include.php">include, как функция</a> |
+    <a href="/name.php">Определение пола по имени</a> |
 </nav>
 
 <br>

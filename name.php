@@ -1,22 +1,21 @@
 <?php
 
 function name($name) {
-    $n = mb_substr($name, -1);
-    if ('р' == $n) {
-        echo 'Пол - мужской';
-    } elseif ('а' == $n ) {
-        echo 'Пол - женский';
-    } else {
-        echo null;
+    $lastNameLetter = mb_substr($name, -1);
+    if ('р' == $lastNameLetter) {
+        return 'Мужской';
+    } elseif ('а' == $lastNameLetter) {
+        return 'Женский';
     }
+    return null;
 }
 
-assert('Александр' === 'Мужской');
-assert('Пётр' === 'Мужской');
-assert('Егор' === 'Мужской');
-assert('Ирина' === 'Женский');
-assert('Ольга' === 'Женский');
-assert('Лариса' === 'Женский');
-assert('Картофель' === null);
+assert('Мужской' == name('Александр'));
+assert('Мужской' == name('Пётр'));
+assert('Мужской' == name('Егор'));
+assert('Женский' == name('Ирина'));
+assert('Женский' == name('Ольга'));
+assert('Женский' == name('Лариса'));
+assert(null == name('Картофель'));
 
- name('Артур');
+echo name('Артур');
